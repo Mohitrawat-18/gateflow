@@ -1,6 +1,8 @@
 package com.gateflow.gateway.service;
 
 import com.gateflow.gateway.dto.GatewayRoute;
+import com.gateflow.gateway.dto.responseDto.GatewayErrorResponse;
+import com.gateflow.gateway.model.CompiledRoute;
 import com.gateflow.gateway.model.RateLimitResult;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpHeaders;
@@ -9,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.ObjectMapper;
+
 
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
@@ -84,7 +87,7 @@ public class GatewayService {
         if(route.isIdempotencyEnabled() && "POST".equals(request.getMethod())) {
             //idempotencyService.
         }
-
+        return ResponseEntity.ok().build();
     }
 
     private String correlationId(HttpServletRequest request) {

@@ -1,6 +1,7 @@
 package com.gateflow.gateway.service;
 
 import com.gateflow.gateway.dto.GatewayRoute;
+import com.gateflow.gateway.model.CompiledRoute;
 import org.springframework.http.server.PathContainer;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.pattern.PathPattern;
